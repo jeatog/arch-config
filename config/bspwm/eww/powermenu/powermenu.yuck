@@ -34,9 +34,9 @@
 
 ;; Power Menu ;;
 (defwindow powermenu
-    :geometry (geometry :x "0%"
-                        :y "0%"
-                        :anchor "center right")
+    :geometry (geometry :x "-4.6%"
+                        :y "4.2%"
+                        :anchor "top right")
     :wm-ignore false
     (powermenu))
     

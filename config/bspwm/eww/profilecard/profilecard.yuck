@@ -305,6 +305,6 @@ Alacritty / Kitty"
 ;; Windows ;;
 
 (defwindow launchermenu
-    :geometry (geometry :x "80px" :y "0px" :anchor "left center")
+    :geometry (geometry :x "-15%" :y "5%" :anchor "top right")
     :wm-ignore false
     (launchermenu))

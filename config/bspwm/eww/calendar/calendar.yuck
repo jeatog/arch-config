@@ -11,8 +11,8 @@
     (divider)
       (label :class "content" :show-truncated "false" :text "${formattime(EWW_TIME, "%M")}"))
 
-    (box :class "date-container" :orientation "h" :space-evenly true :halign "center"
-      (label :text "${formattime(EWW_TIME, "%A, %d %B")}"))
+    ;(box :class "date-container" :orientation "h" :space-evenly true :halign "center"
+      ;(label :text "${formattime(EWW_TIME, "%A, %d %B")}"))
 ))
 
 (defwidget cal []
@@ -37,6 +37,6 @@
 )
 
 (defwindow date
-  :geometry (geometry :x "0%" :y "8%" :anchor "top center")
+  :geometry (geometry :x "10%" :y "8%" :anchor "top left")
   :wm-ignore true
 (date))

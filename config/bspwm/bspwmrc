@@ -87,7 +87,8 @@ pidof -q picom || { picom --config "$HOME"/.config/bspwm/picom.conf & }
 dunst -config "$HOME"/.config/bspwm/dunstrc &
 
 # Set random wallpaper for actual rice
-feh -z --no-fehbg --bg-fill "${rice_dir}"/walls
+#feh -z --no-fehbg --bg-fill "${rice_dir}"/walls
+feh --no-fehbg --bg-fill ${rice_dir}/walls/oogway.jpg
 
 # Launch eww daemon
 pidof -q eww || { eww -c "$HOME"/.config/bspwm/eww daemon & }
@@ -97,3 +98,6 @@ pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-g
 
 # Fix cursor
 xsetroot -cursor_name left_ptr
+
+# Portapapeles
+clipse -listen

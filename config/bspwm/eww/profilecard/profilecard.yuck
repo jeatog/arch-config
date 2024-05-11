@@ -19,6 +19,7 @@
 (defpoll weathercity :interval "15m" "Weather city")
 (defpoll weathertemp :interval "15m" "Weather current_temp")
 (defpoll weatherdesc :interval "15m" "Weather weather_desc")
+(defpoll weatherfeel :interval "15m" "Weather feels_like")
 (defpoll weatherhex :interval "15m" "Weather hex")
 
 ;; Networking
@@ -175,9 +176,11 @@
         (box :class "weatherdesc" :style "color: ${weatherhex};" :halign "start" :hexpand true weatherdesc)
         (box :class "weathertemp" :halign "end" "${weathertemp}°C")
       )
-      (box :orientation "v" :class "weatherbot" :space-evenly false
+      (box :orientation "h" :class "weatherbot" :space-evenly false
         (box :class "weathercity" :halign "start" :hexpand true
 			 (label :limit-width 22 :text weathercity))
+        (box :class "weathercity" :halign "end"
+       (label :limit-width 10 :text "sen. ${weatherfeel}°C"))
       )
     )
       (box :class "weathericon" :style "color: ${weatherhex};" :halign "center" weathericon)

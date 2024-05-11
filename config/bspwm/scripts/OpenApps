@@ -67,6 +67,9 @@ case "$1" in
     --clipse)
         Term --clipse
         ;;
+    --githbubdesktop)
+        github-desktop
+        ;;
         # Eww Widgets
     --KeyHelp)
 		eww -c "$WIDGET_DIR" open --toggle csheet

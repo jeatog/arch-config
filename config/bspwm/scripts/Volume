@@ -21,6 +21,10 @@ get_volume() {
     pamixer --get-volume-human | sed 's/%//'
 }
 
+get_volume_mic() {
+    pamixer --default-source --get-volume-human | sed 's/%//'
+}
+
 # Get icons
 get_icon() {
     current="$(get_volume)"
@@ -28,6 +32,18 @@ get_icon() {
         icon="$vol_dir/mute.png"
     else
         icon="$vol_dir/vol.png"
+    fi
+}
+
+MIC_ICON=""
+get_icon_mic() {
+    current="$(get_volume_mic)"
+    if [[ "$current" -eq "0" || "$current" == "muted" ]] ; then
+        icon="$vol_dir/no_mic.png"
+        MIC_ICON=""
+    else
+        icon="$vol_dir/mic.png"
+        MIC_ICON=""
     fi
 }
 
@@ -47,11 +63,26 @@ toggle_mute() {
     if [[ $(pamixer --get-mute) == false ]]; then
         pamixer --toggle-mute
         get_icon
-        message="Mute"
+        message="Audio silenciado"
     else
         pamixer --toggle-mute
         get_icon
-        message="Unmute"
+        message="Audio activado"
+    fi
+    ${notify_cmd} -i "$icon" "$message"
+}
+
+toggle_mute_mic() {
+    if [[ $(pamixer --default-source --get-mute) == false ]]; then
+        pamixer --default-source -t
+        get_icon_mic
+        message="Micro silenciado"
+        MIC_ICON=""
+    else
+        pamixer --default-source -t
+        get_icon_mic
+        message="Micro activado"
+        MIC_ICON=""
     fi
     ${notify_cmd} -i "$icon" "$message"
 }
@@ -63,6 +94,8 @@ if command -v pamixer &>/dev/null; then
         --inc) adjust_volume -i 5 ;;
         --dec) adjust_volume -d 5 ;;
         --toggle) toggle_mute ;;
+        --toggle-mic) toggle_mute_mic ;;
+        --mic-icon) get_icon_mic ; echo $MIC_ICON ;; 
         *) echo "$(get_volume)%" ;;
     esac
 else

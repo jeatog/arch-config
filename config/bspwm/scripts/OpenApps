@@ -64,6 +64,9 @@ case "$1" in
     --soundcontrol)
         pavucontrol
         ;;
+    --clipse)
+        Term --clipse
+        ;;
         # Eww Widgets
     --KeyHelp)
 		eww -c "$WIDGET_DIR" open --toggle csheet

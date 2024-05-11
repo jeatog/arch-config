@@ -56,6 +56,8 @@ if [[ "$MY_TERM" == "alacritty" ]]; then
 		alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=18 window.dimensions.columns=67 -e ncmpcpp
 	elif [[ "$1" == "--fetch" ]]; then
 		alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=26 window.dimensions.columns=40 -e ~/.local/bin/sysfetch
+  elif [[ "$1" == "--clipse" ]]; then
+    alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=14 window.dimensions.columns=90 -e clipse
 	fi
 	
 elif [[ "$MY_TERM" == "kitty" ]]; then

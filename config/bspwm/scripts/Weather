@@ -9,12 +9,12 @@ check_if_empty() {
 }
 
 KEY="8b05d62206f459e1d298cbe5844d7d87"
-CITY="Mexico City"
+CITY="Salina Cruz, MX"
 CITYN=$(encode_to_url_format "$CITY")
 UNITS="metric" # Available "metric" "imperial"
-WEATHER=$(curl -sf "api.openweathermap.org/data/2.5/weather?q=$CITYN&appid=$KEY&units=$UNITS")
+WEATHER=$(curl -sf "api.openweathermap.org/data/2.5/weather?q=$CITYN&appid=$KEY&units=$UNITS&lang=es")
 
-WEATHER_DESC=$(echo "$WEATHER" | jq -r ".weather[0].main")
+WEATHER_DESC=$(echo "$WEATHER" | jq -r ".weather[0].description")
 WEATHER_TEMP=$(echo "$WEATHER" | jq ".main.temp" | cut -d "." -f 1)
 WEATHER_ICON_CODE=$(echo "$WEATHER" | jq -r ".weather[].icon" | head -1)
 WEATHER_FEELS_LIKE=$(echo "$WEATHER" | jq ".main.feels_like" | cut -d "." -f 1)

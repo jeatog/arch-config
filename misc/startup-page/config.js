@@ -11,17 +11,17 @@ const CONFIG = {
 	// └─┘┴ ┴└─┘┴└─┘└─┘
 
 	// General
-	name: 'gh0stzk',
+	name: 'jeatog',
 	imageBackground: false,
 	openInNewTab: true,
-	twelveHourFormat: true,
+	twelveHourFormat: false,
 	timeZone: 'America/Mexico_City',
 
 	// Greetings
-	greetingMorning: 'Good morning!',
-	greetingAfternoon: 'Good afternoon,',
-	greetingEvening: 'Good evening,',
-	greetingNight: 'Go to Sleep!',
+	greetingMorning: 'Buenos dias, ',
+	greetingAfternoon: 'Buenas tardes,',
+	greetingEvening: 'Buenas tardes,',
+	greetingNight: 'Buenas noches,',
 
 	// Layout
 	bentoLayout: 'lists', // 'bento', 'lists', 'buttons'
@@ -30,7 +30,7 @@ const CONFIG = {
 	weatherKey: '8b05d62206f459e1d298cbe5844d7d87', // Write here your API Key
 	weatherIcons: 'OneDark', // 'Onedark', 'Nord', 'Dark', 'White'
 	weatherUnit: 'C', // 'F', 'C'
-	language: 'en', // More languages in https://openweathermap.org/current#multi
+	language: 'es', // More languages in https://openweathermap.org/current#multi
 
 	trackLocation: true, // If false or an error occurs, the app will use the lat/lon below
 	defaultLatitude: '19.593',

@@ -22,7 +22,7 @@ super + alt + Return
 	OpenApps --floating
 
 # Application menu
-super + @space
+super + a
 	OpenApps --menu
 
 #####
@@ -38,6 +38,10 @@ shift + alt + {r,v,k}
 # Pavucontrol
 shift + alt + p
 	OpenApps --soundcontrol
+
+# clipse (Portapapeles)
+super + v
+  OpenApps --clipse
 
 
 #|||----- System Keybindings -----|||#
@@ -102,6 +106,10 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 XF86Audio{Next,Prev,Play,Stop}
 	MediaControl {--next,--previous,--toggle,--stop}
 
+# Microfono
+super + alt + m 
+  Volume --toggle-mic
+
 
 #|||----- Bspwm hotkeys -----|||#
 
@@ -115,7 +123,7 @@ super + {_,shift + }q
 	
 # Reload Keybindings
 super + Escape
-	pkill -USR1 -x sxhkd; dunstify -u low -i ~/.config/bspwm/assets/reload.svg 'sxhkd' 'The configuration file has been reloaded successfully!'
+	pkill -USR1 -x sxhkd; dunstify -u low -i ~/.config/bspwm/assets/reload.svg 'sxhkd' 'Se actualizo correctamente la configuracion global!'
 
 #####
 
@@ -142,11 +150,11 @@ super + r
 	bspc node @/ --rotate {90,-90}
 
 # Change focus of the Node or Swap Nodes
-shift + super {_,ctrl + }{Left,Down,Up,Right}
+shift +  {_,ctrl + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # Switch workspace
-super + {Left,Right}
+super + shift + {Left,Right}
 	bspc desktop -f {prev,next}.local
 
 # focus or send to the given desktop

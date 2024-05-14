@@ -135,9 +135,9 @@ killall -USR1 kitty
 # Set compositor configuration
 set_picom_config() {
 	sed -i "$HOME"/.config/bspwm/picom.conf \
-		-e "s/normal = .*/normal =  { fade = true; shadow = false; }/g" \
+		-e "s/normal = .*/normal =  { fade = true; shadow = true; }/g" \
 		-e "s/shadow-color = .*/shadow-color = \"#000000\"/g" \
-		-e "s/corner-radius = .*/corner-radius = 0/g" \
+		#-e "s/corner-radius = .*/corner-radius = 0/g" \
 		-e "s/\".*:class_g = 'Alacritty'\"/\"100:class_g = 'Alacritty'\"/g" \
 		-e "s/\".*:class_g = 'kitty'\"/\"100:class_g = 'kitty'\"/g" \
 		-e "s/\".*:class_g = 'FloaTerm'\"/\"100:class_g = 'FloaTerm'\"/g"
@@ -149,7 +149,7 @@ set_dunst_config() {
 		-e "s/transparency = .*/transparency = 0/g" \
 		-e "s/frame_color = .*/frame_color = \"#282a36\"/g" \
 		-e "s/separator_color = .*/separator_color = \"#a4ffff\"/g" \
-		-e "s/font = .*/font = JetBrainsMono NF Medium 9/g" \
+		-e "s/font = .*/font = SF Pro Rounded 9/g" \
 		-e "s/foreground='.*'/foreground='#a4ffff'/g"
 
 	sed -i '/urgency_low/Q' "$HOME"/.config/bspwm/dunstrc
